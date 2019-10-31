@@ -9,7 +9,7 @@ kustomize build base > kubectl apply -f -
 ```
 
 ```
-k get all
+kubectl get all
 ```
 
 You should see:
