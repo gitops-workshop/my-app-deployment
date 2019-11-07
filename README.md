@@ -1,6 +1,5 @@
 # Kustomize
 
-
 Build and test:
 
 ```
@@ -31,7 +30,7 @@ kustomize build base > kubectl apply -f -
 
 ```
 
-Clean-up:
+### Clean Up
 
 ```
 kustomize build overlays/dev/|kubectl delete -f -
