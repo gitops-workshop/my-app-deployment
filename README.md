@@ -1,10 +1,16 @@
 # Kustomize
 
+## Set-Up
+
+```
+brew install kustomize
+```
+
 Build and test:
 
 ```
 kustomize build base
-kustomize build base > kubectl apply -f -
+kustomize build overlays/dev | kubectl -n default apply -f -
 ```
 
 ```
@@ -26,12 +32,12 @@ Open http://localhost:8080
 
 ```
 kustomize build o
-kustomize build base > kubectl apply -f -
+kustomize build base > kubectl -d default apply -f -
 
 ```
 
 ### Clean Up
 
 ```
-kustomize build overlays/dev/|kubectl delete -f -
+kustomize build overlays/dev/|kubectl -d default delete -f -
 ```
