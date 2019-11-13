@@ -5,5 +5,5 @@ metadata:
 spec:
   containers:
     - name: main
-      image: my-app:v1
+      image: gitopsworkshop/my-app:v1
       imagePullPolicy: IfNotPresent
