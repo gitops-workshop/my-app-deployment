@@ -7,6 +7,3 @@ spec:
     - name: main
       image: my-app:v1
       imagePullPolicy: IfNotPresent
-      ports:
-        - containerPort: 8080
-          hostPort: 8080
