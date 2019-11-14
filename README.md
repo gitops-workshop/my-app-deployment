@@ -27,7 +27,9 @@ mkdir -p my-app-deployment/my-app && cd my-app-deployment/my-app
 
 ```bash
 cat >./kustomization.yaml <<EOL
-bases:
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
   - ../base
 EOL
 ```
