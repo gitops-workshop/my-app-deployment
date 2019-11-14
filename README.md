@@ -34,6 +34,7 @@ EOL
 
 ```bash
 kustomize build .
+git commit -am "add app environment"
 ```
 
 ### 4. Change the name prefix
