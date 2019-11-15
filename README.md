@@ -54,6 +54,7 @@ git push
 ### 6. Change The Name Prefix
 
 ```
+cd overlays/dev
 kustomize edit set nameprefix ${username}-
 git diff
 kustomize build
