@@ -14,7 +14,8 @@ kustomize version
 * Then, open your terminal and run:
 
 ```bash
-git clone git@github.com:<username>/my-app-deployment.git
+export username=... ;# your Github username
+git clone git@github.com:${username}/my-app-deployment.git
 cd my-app-deployment
 ```
 
@@ -50,7 +51,7 @@ git push
 ### 4. Change The Name Prefix
 
 ```
-kustomize edit set nameprefix <yourusername>-
+kustomize edit set nameprefix ${username}-
 git diff
 kustomize build
 git commit -am "set name prefix"
@@ -65,10 +66,10 @@ git push
 
 | Field | Value |
 |-------|-------|
-| Application name: | `<username>` |
+| Application name: | `${username}` |
 | Project: | `default` |
 | Sync policy: | `Manual` |
-| Repository: | `https://github.com/<username>/my-app-deployment` |
+| Repository: | `https://github.com/${username}/my-app-deployment` |
 | Revision: | `HEAD` |
 | Path: | `overlays/dev` |
 | Cluster: | `https://kubernetes.default.svc` |
