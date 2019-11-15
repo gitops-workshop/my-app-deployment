@@ -1,4 +1,4 @@
-
+# Hands-On
 
 ### 1. Install Kustomize
 
@@ -66,13 +66,13 @@ git push
 | Field | Value |
 |-------|-------|
 | Application name: | `<username>` |
-| Project: | default |
-| Sync policy: | Manual |
+| Project: | `default` |
+| Sync policy: | `Manual` |
 | Repository: | `https://github.com/<username>/my-app-deployment` |
-| Revision: | HEAD |
-| Path: | overlays/dev |
-| Cluster: | https://kubernetes.default.svc |
-| Namespace: | default |
+| Revision: | `HEAD` |
+| Path: | `overlays/dev` |
+| Cluster: | `https://kubernetes.default.svc` |
+| Namespace: | `default` |
   
 ### 6. Sync Your App
 
