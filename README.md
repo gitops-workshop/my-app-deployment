@@ -7,7 +7,7 @@ brew install kustomize
 kustomize version
 ```
 
-### 2. Fork the example
+### 2. Fork The Example
 
 * Open https://github.com/gitops-workshop/my-app-deployment
 * Click “Fork”. 
@@ -26,7 +26,7 @@ kustomize build base
 
 Note: The above URL should start with "git@" and you'll need to enter your username.
 
-### 3. Create your app environment
+### 3. Create An Overlay
 
 ```bash
 mkdir -p overlays/dev
@@ -47,7 +47,7 @@ git add . && git commit -am "add dev overlay"
 git push
 ```
 
-### 4. Change the name prefix
+### 4. Change The Name Prefix
 
 ```
 kustomize edit set nameprefix <yourusername>-
@@ -57,7 +57,7 @@ git commit -am "set name prefix"
 git push
 ```
 
-### 5. Open Argo CD and create your app
+### 5. Open Argo CD And Create Your App
 
 * Open https://argo-cd-kubecon.apps.argoproj.io/
 * Click "Login Via Github"
@@ -74,11 +74,11 @@ git push
 | Cluster: | https://kubernetes.default.svc |
 | Namespace: | default |
   
-### 6. Sync your app
+### 6. Sync Your App
 
 Click "Sync".
 
-### 7. Upgrade your app
+### 7. Upgrade Your App
 
 ```
 kustomize edit set image gitopsworkshop/my-app:v2
@@ -92,7 +92,13 @@ git push
 * Preview Differences: "App Diff"
 * Deploy New Version: "Sync"
 
-### 8. Proper GitOps rollback
+### 8. Troubleshoot Degraded App
+
+1. Open app
+2. Find the red heart
+3. Clik on the resource and check each tab
+
+### 9. GitOps Rollback
 
 ```
 git revert $(git rev-parse HEAD)
