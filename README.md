@@ -11,7 +11,10 @@ kustomize version
 
 * Open https://github.com/gitops-workshop/my-app-deployment
 * Click “Fork”. 
-* Then, open your terminal and run:
+
+### 3. Clone Your Fork
+
+In your terminal:
 
 ```bash
 export username=... ;# your Github username
@@ -19,7 +22,7 @@ git clone git@github.com:${username}/my-app-deployment.git
 cd my-app-deployment
 ```
 
-Test:
+### 4. Build The Base
 
 ```
 kustomize build base
@@ -27,7 +30,7 @@ kustomize build base
 
 Note: The above URL should start with "git@" and you'll need to enter your username.
 
-### 3. Create An Overlay
+### 5. Create An Overlay
 
 ```bash
 mkdir -p overlays/dev
@@ -48,7 +51,7 @@ git add . && git commit -am "add dev overlay"
 git push
 ```
 
-### 4. Change The Name Prefix
+### 6. Change The Name Prefix
 
 ```
 kustomize edit set nameprefix ${username}-
@@ -58,7 +61,7 @@ git commit -am "set name prefix"
 git push
 ```
 
-### 5. Open Argo CD And Create Your App
+### 7. Open Argo CD And Create Your App
 
 * Open https://argo-cd-kubecon.apps.argoproj.io/
 * Click "Login Via Github"
@@ -75,11 +78,11 @@ git push
 | Cluster: | `https://kubernetes.default.svc` |
 | Namespace: | `default` |
   
-### 6. Sync Your App
+### 8. Sync Your App
 
 Click "Sync".
 
-### 7. Upgrade Your App
+### 9. Upgrade Your App
 
 ```
 kustomize edit set image gitopsworkshop/my-app:v2
@@ -93,13 +96,13 @@ git push
 * Preview Differences: "App Diff"
 * Deploy New Version: "Sync"
 
-### 8. Troubleshoot Degraded App
+### 10. Troubleshoot Degraded App
 
 1. Open app
 2. Find the red heart
 3. Clik on the resource and check each tab
 
-### 9. GitOps Rollback
+### 11. GitOps Rollback
 
 ```
 git revert $(git rev-parse HEAD)
