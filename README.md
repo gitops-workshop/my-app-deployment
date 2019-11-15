@@ -1,4 +1,4 @@
-# GitOps Ninja
+
 
 ### 1. Install Kustomize
 
@@ -15,6 +15,13 @@ kustomize version
 
 ```bash
 git clone git@github.com:<username>/my-app-deployment.git
+cd my-app-deployment
+```
+
+Test:
+
+```
+kustomize build base
 ```
 
 Note: The above URL should start with "git@" and you'll need to enter your username.
@@ -22,21 +29,22 @@ Note: The above URL should start with "git@" and you'll need to enter your usern
 ### 3. Create your app environment
 
 ```bash
-mkdir -p my-app-deployment/my-app && cd my-app-deployment/my-app
+mkdir -p overlays/dev
 ```
 
 ```bash
-cat >./kustomization.yaml <<EOL
+cat > overlays/dev/kustomization.yaml <<EOL
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../base
+  - ../../base
 EOL
 ```
 
 ```bash
-kustomize build .
-git add . && git commit -am "add app environment"
+kustomize build overlays/dev
+git add . && git commit -am "add dev overlay"
+git push
 ```
 
 ### 4. Change the name prefix
@@ -62,7 +70,7 @@ git push
 | Sync policy: | Manual |
 | Repository: | `https://github.com/<username>/my-app-deployment` |
 | Revision: | HEAD |
-| Path: | my-app |
+| Path: | overlays/dev |
 | Cluster: | https://kubernetes.default.svc |
 | Namespace: | default |
   
