@@ -7,7 +7,7 @@ brew install kustomize
 kustomize version
 ```
 
-### 2. Fork The Example
+### 2. Fork The Example Repo
 
 * Open https://github.com/gitops-workshop/my-app-deployment
 * Click “Fork”. 
@@ -89,6 +89,9 @@ Click "Sync".
 kustomize edit set image gitopsworkshop/my-app:v2
 git diff
 kustomize build
+```
+
+```
 git commit -am "upgrade to version 2"
 git push
 ```
