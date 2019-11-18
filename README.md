@@ -17,7 +17,7 @@ kustomize version
 In your terminal:
 
 ```bash
-export username=... ;# your Github username
+export username=... ;# your Github username in lowercase
 git clone git@github.com:${username}/my-app-deployment.git
 cd my-app-deployment
 ```
@@ -81,7 +81,8 @@ git push
   
 ### 8. Sync Your App
 
-Click "Sync".
+* Click "Sync".
+* Click "Synchronize" in the Sliding panel.
 
 ### 9. Upgrade Your App
 
@@ -106,7 +107,14 @@ git push
 2. Find the red heart
 3. Clik on the resource and check each tab
 
-### 11. GitOps Rollback
+### 11. Emergency Rollback
+
+* Click "History And Rollback"
+* Click "..." button in the last row
+* Click "Rollback"
+* Click "Ok" in the modal panel
+
+### 12. GitOps Rollback
 
 ```
 git revert $(git rev-parse HEAD)
